@@ -129,3 +129,78 @@ h1 {
 .main .alert .fa-square-xmark:hover {
   color: var(--dark);
 }
+.main table {
+  width: 100%;
+  border-collapse: collapse; /*idem abajo*/
+  border-spacing: 0; /* parar quitar espacio entre celdas*/
+  border-radius: 0.3rem;
+  margin: 2em auto;
+}
+
+.main tr {
+  background-color: var(--green-white);
+}
+.main tr:nth-of-type(odd) {
+  background-color: var(--light_grey);
+}
+
+.main th {
+  background-color: var(--cyan);
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.main th:first-child {
+  border-top-left-radius: 0.3rem;
+}
+.main th:last-child {
+  border-top-right-radius: 0.3rem;
+}
+
+.main td {
+  font-family: "Fredoka", sans-serif;
+  padding: 0.8rem;
+}
+
+.main td:first-child {
+  width: 70%;
+  font-size: 1.5rem;
+}
+
+.main td:nth-child(2),
+.main td:nth-child(3) {
+  width: 15%;
+  font-size: 1.1rem;
+}
+
+.main table .fa-2x {
+  font-size: 1.3rem;
+  color: var(--yellow);
+  transition: all 0.3s ease-in-out;
+}
+
+.main table .fa-2x:hover {
+  color: var(#ffca2e);
+  transform: scale(1.2);
+}
+.main table td:nth-child(3) .fa-2x {
+  color: #dc3545;
+}
+
+.main table td:nth-child(3) .fa-2x:hover {
+  color: #bb2d3b;
+}
+
+.main table td:nth-child(2) .fa-2x:hover {
+  color: orange;
+}
+.main table .fa-circle-check {
+  color: var(--green);
+  margin-right: 15px;
+  transition: all 0.3s ease-in-out;
+}
+.main table .fa-circle-check:hover {
+  color: var(--teal);
+}
