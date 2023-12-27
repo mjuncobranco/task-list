@@ -103,13 +103,48 @@ window.addEventListener('load',() => {
   const deleteRow = (e, editing) => {
     if(editing) {
      e.target.parentNode.parentNode.remove(); 
-     console.log(e.target);
     } else {
       e.target.parentNode.parentNode.parentNode.remove();
-      console.log(e.target);
     }
   };
-
+  const generateRow = (id, text) => {
+    let newRow = document.createElement("tr");
+    newRow.setAttribute("id", id); //creo id para el elemento tr nuevo
+    //creo la fila con el contenido del tr del index con template lit y variable ${text}
+    newRow.innerHTML = ` 
+    <td>
+    <i class="fa-solid fa-circle-check fa-2x"></i
+    >
+    <span class="task" contenteditable="true"> ${text} </span>
+    </td>
+    <td>
+    <span class="fa-stack fa-2x">
+    <i class="fa-solid fa-square fa-stack-2x"></i>
+    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+    </span>
+    </td>
+    <td>
+    <span class="fa-stack fa-2x">
+    <i class="fa-solid fa-square fa-stack-2x"></i>
+    <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
+    </span>
+    </td>
+         `;
+    newRow.firstElementChild.firstElementChild.addEventListener('click', (e)=> {//agrego evento click al icono verde
+      deleteTask(e);// llamo funcion borrar para tachar tarea
+    });
+    newRow.firstElementChild.lastElementChild.addEventListener('click', (e)=> {
+      editTask(e, true);//agrego evento de edit task al contenido del span para editar tarea
+    });//el booleano true es para saber si es modo editable
+    newRow.firstElementChild.nextElementSibling.lastElementChild.addEventListener('click', (e)=> {
+      editTask(e, false);//agrego evento de edit task icono lapiz para editar tarea, booleano false porque no esta en modo editable, sino evento click en icono
+    })
+    newRow.lastElementChild.lastElementChild.addEventListener('click',(e) => {
+      deleteRow(e, false);//el booleano true es para saber si es modo editable
+    });
+    return newRow;
+  };
+  
 
 
 
