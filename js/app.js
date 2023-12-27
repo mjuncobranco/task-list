@@ -53,6 +53,11 @@ window.addEventListener('load',() => {
         editTask(e, false); //llamo funcion EDITAR TAREAS
       });  
     });
+    task.forEach(item => {
+      item.addEventListener('focus', (e) => {
+       editTask(e, true); //llamo funcion EDITAR TAREAS
+      });  
+    }); 
   });
 
 
