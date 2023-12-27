@@ -100,6 +100,15 @@ window.addEventListener('load',() => {
       task.setAttribute("data-completed","true"); 
     }
   };
+  const deleteRow = (e, editing) => {
+    if(editing) {
+     e.target.parentNode.parentNode.remove(); 
+     console.log(e.target);
+    } else {
+      e.target.parentNode.parentNode.parentNode.remove();
+      console.log(e.target);
+    }
+  };
 
 
 
