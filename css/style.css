@@ -204,3 +204,18 @@ h1 {
 .main table .fa-circle-check:hover {
   color: var(--teal);
 }
+
+.main table .editable {
+  background-color: var(--white);
+  display: inline-block;
+  padding: 0.3em;
+  border-radius: 0.3em;
+  margin-top: 0.3em;
+}
+
+.main .dismissible {
+  opacity: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  transition: all 0.1s linear;
+}
