@@ -88,7 +88,18 @@ window.addEventListener('load',() => {
       editable.focus();
     }
    };
-
+   const deleteTask = (e) => {
+    let task = e.target.nextElementSibling; 
+    text = task.innerHTML;
+    if(text.includes("<del>")) { 
+      task.innerHTML = task.firstElementChild.textContent;
+      task.setAttribute("data-completed","false");
+  
+    } else {
+      task.innerHTML = `<del>${text}</del>`;
+      task.setAttribute("data-completed","true"); 
+    }
+  };
 
 
 
