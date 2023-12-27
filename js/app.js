@@ -45,8 +45,13 @@ window.addEventListener('load',() => {
      });
      trash.forEach(item => {
       item.addEventListener('click', (e) => {
-        deleteRow(e, false); //llamo funcion para tachar y destachar tareas, que fue creada debajo de este evento
+        deleteRow(e, false); 
       });   
+    });
+    edit.forEach(item => {
+      item.addEventListener('click', (e) => {
+        editTask(e, false); //llamo funcion EDITAR TAREAS
+      });  
     });
   });
 
