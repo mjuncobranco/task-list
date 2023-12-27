@@ -13,6 +13,15 @@ window.addEventListener('load',() => {
   close.addEventListener("click", () => {
     alert.classList.add("dismissible"); //ponerle la clase dismissible para probar
   });
+  input.addEventListener("focus", () => {
+    document.addEventListener("keydown", (e) => {
+      //console.log(e.code); //para saber que tecla presiono el usuario
+      if (e.code == "Enter" || e.code == "NumpadEnter") {
+        e.preventDefault();
+        //evitando que al presionar enter se refresque la pagina
+      }
+    });
+  });
 
 
 
