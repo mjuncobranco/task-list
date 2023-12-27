@@ -10,6 +10,10 @@ window.addEventListener('load',() => {
   let edit =document.querySelectorAll(".fa-pencil");
   let task = document.querySelectorAll(".task");
 
+  close.addEventListener("click", () => {
+    alert.classList.add("dismissible"); //ponerle la clase dismissible para probar
+  });
+
 
 
 
