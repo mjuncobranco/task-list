@@ -60,6 +60,34 @@ window.addEventListener('load',() => {
     }); 
   });
 
+  const editTask = (e, onfocus) => {
+    let editable=  e;
+    if(onfocus) {
+      
+      editable.target.classList.add('editable');
+      document.addEventListener('keydown', (e)=> {
+        console.log(e.code);
+        if(e.code == "Escape") {
+          editable.target.classList.remove('editable');
+          editable.target.blur();
+          if(editable.target.innerHTML == ""){ 
+            deleteRow(editable, true);
+          }
+        }
+      });
+      editable.target.addEventListener('blur', ()=> {
+        
+        if(editable.target.innerHTML == ""){ 
+          deleteRow(editable, true);
+        }
+        editable.target.classList.remove('editable');
+      });
+    } else {
+      let editable= e.target.parentNode.parentNode.previousElementSibling.lastElementChild;
+      editable.classList.add('editable');
+      editable.focus();
+    }
+   };
 
 
 
