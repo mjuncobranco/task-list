@@ -11,16 +11,34 @@ window.addEventListener('load',() => {
   let task = document.querySelectorAll(".task");
 
   close.addEventListener("click", () => {
-    alert.classList.add("dismissible"); //ponerle la clase dismissible para probar
+    alert.classList.add("dismissible"); 
   });
   input.addEventListener("focus", () => {
     document.addEventListener("keydown", (e) => {
-      //console.log(e.code); //para saber que tecla presiono el usuario
+      
       if (e.code == "Enter" || e.code == "NumpadEnter") {
         e.preventDefault();
-        //evitando que al presionar enter se refresque la pagina
+        
       }
     });
+  });
+  arrow.addEventListener("click", (e) => {
+    if (input.value.trim() == "") { 
+      e.preventDefault();
+      input.value = ""; 
+      alert.classList.remove("dismissible");
+    } else {
+      text = input.value; 
+      input.value = ""; 
+      id = Number(
+        document.querySelector("tbody")?.lastElementChild?.id + 1 || 0
+      ); 
+      document.querySelector("tbody").appendChild(generateRow(id, text));
+      if (!alert.classList.contains("dismissible")) {
+        alert.classList.add("dismissible"); 
+      }
+      
+    }
   });
 
 
