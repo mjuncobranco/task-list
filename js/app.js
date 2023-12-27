@@ -36,9 +36,13 @@ window.addEventListener('load',() => {
       document.querySelector("tbody").appendChild(generateRow(id, text));
       if (!alert.classList.contains("dismissible")) {
         alert.classList.add("dismissible"); 
-      }
-      
+      }      
     }
+    done.forEach(item => {
+      item.addEventListener('click', (e) => {
+         deleteTask(e); 
+      }); 
+     });
   });
 
 
