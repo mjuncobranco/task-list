@@ -43,6 +43,11 @@ window.addEventListener('load',() => {
          deleteTask(e); 
       }); 
      });
+     trash.forEach(item => {
+      item.addEventListener('click', (e) => {
+        deleteRow(e, false); //llamo funcion para tachar y destachar tareas, que fue creada debajo de este evento
+      });   
+    });
   });
 
 
