@@ -28,3 +28,85 @@
   outline: 0 none;
   list-style: none;
 }
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #c9dcff;
+  background-image: linear-gradient(to right, #e2e2e2, #c9dcff);
+}
+
+h1 {
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 3.9rem;
+}
+
+.main {
+  width: 80%;
+  background-color: var(--white);
+  padding: 2em;
+  margin: 10% auto;
+}
+
+.main .container {
+  overflow-x: auto; /*para que haya barra scroll si se necesita*/
+}
+
+.main form {
+  width: 100%;
+}
+
+.main label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main label div {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background-color: var(--blue);
+  min-height: 60px;
+  font-size: 1.1em;
+  border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.main label div:hover {
+  background-color: rgb(83, 189, 224);
+}
+
+.main label div .fa-solid {
+  transition: all 0.4s ease-in-out;
+}
+.main label div .fa-solid:hover {
+  transform: translate(20px);
+}
+
+.main input {
+  display: block;
+  width: 80%;
+  background-color: #20c997;
+  padding: 0.5rem;
+  min-height: 60px;
+  font-size: 1.1rem;
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.main input::placeholder {
+  color: var(--dark);
+  font-size: 1.1rem;
+}
+.main input:focus {
+  background-color: var(--white);
+  border: 5px solid transparent;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  z-index: 2;
+}
